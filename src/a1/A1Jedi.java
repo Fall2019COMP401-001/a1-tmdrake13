@@ -58,7 +58,6 @@ public class A1Jedi {
 						 for (int m = 0; m < customers[j].itemsbought.length; m++) {
 							 if (customers[j].itemsbought[m].name.equals((storeitems[i].name))) {
 								 storeitems[i].incCustBought();
-								 storeitems[i].addTotalNumBought(customers[j].itemsbought[m].frequency);
 								 break;
 							 }
 									 
@@ -66,6 +65,22 @@ public class A1Jedi {
 					 }
 					 
 				 } 
+				 
+				 //a similar loop is ran twice in order to increase customer count and
+				 //total number bought - this avoids a bug in which multiple items of the 
+				 //same kind are listed separately for each customer
+				 
+				 for (int i = 0; i < storeitems.length; i ++) {
+					 for (int j = 0; j < customers.length; j++) {
+						 for (int m = 0; m < customers[j].itemsbought.length; m++) {
+							 if (customers[j].itemsbought[m].name.equals((storeitems[i].name))) {
+								 storeitems[i].addTotalNumBought(customers[j].itemsbought[m].frequency);
+							 }
+									 
+						 }
+					 }
+					 
+				 }
 				 
 				
 				 
