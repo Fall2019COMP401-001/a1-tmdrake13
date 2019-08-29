@@ -43,11 +43,8 @@ public class A1Jedi {
 						 //input name of items bought
 						 String name = scan.next();
 						
-						 
-						 
 						 customers[i].itemsbought[j] = new Item (frequency, name);
 
-						
 						customers[i].setTotalSpent (customers[i].itemsbought[j].price * customers[i].itemsbought[j].frequency);
 					}
 				}		
@@ -62,12 +59,17 @@ public class A1Jedi {
 							 if (customers[j].itemsbought[m].name.equals((storeitems[i].name))) {
 								 storeitems[i].incCustBought();
 								 storeitems[i].addTotalNumBought(customers[j].itemsbought[m].frequency);
+								 break;
 							 }
 									 
 						 }
 					 }
 					 
-				 }
+				 } 
+				 
+				
+				 
+				 
 				 
 				 for (int i = 0; i < storeitems.length; i++ ) {
 					 if (storeitems[i].custbought != 0) {
@@ -78,6 +80,8 @@ public class A1Jedi {
 					 
 				 }
 				
-		
 	}
+	
+	
+		
 }
